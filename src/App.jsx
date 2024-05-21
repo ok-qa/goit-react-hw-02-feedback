@@ -18,7 +18,8 @@ const App = () => {
 
     useEffect(() => {
         const savedFeedbacks = localStorage.getItem(FEEDBACK_LOCALSTORAGE_KEY);
-        setFeedbackValue(JSON.parse(savedFeedbacks));
+        const startValue = savedFeedbacks ? JSON.parse(savedFeedbacks) :  initialFeedbackValue;
+        setFeedbackValue(startValue);
     }, []);
     
     
